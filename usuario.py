@@ -1,5 +1,8 @@
 #clase de usuario, valida datos y crea diccionario 
 
+#convendria permitir a la clase recibir multiples sets de datos.
+
+
 from pathlib import Path
 import math
 import pandas as pd
