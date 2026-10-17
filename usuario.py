@@ -1,4 +1,4 @@
-#clase de usuario, valida datos y crea diccionario 
+#clase de usuario, valida datos
 
 #convendria permitir a la clase recibir multiples sets de datos.
 
