@@ -1,6 +1,7 @@
-pandas
+pandas #manejo de datos
 math
-scikit-learn
-streamlit
-joblib
-os
+scikit-learn #entrenamineto y machine learning
+#streamlit (posible uso para interfaz grafica)
+#kivy (posible uso para interfaz grafica)
+joblib #persistencia de datos
+os #creacion de directorios
