@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #clase de usuario, valida datos y crea diccionario 
+=======
+#clase de usuario, valida datos
+>>>>>>> 2aa5f19bbb89525a6e94576873558b06062f3ca0
 
 from pathlib import Path
 import math
@@ -29,4 +33,12 @@ class solicitante:
     def a_dataframe(self):
         d = self.a_dict()
         d['log_annual_inc'] = math.log(d.pop('Ingreso_anual')) #csv usa log
+<<<<<<< HEAD
         return pd.DataFrame([d]) 
+=======
+        return pd.DataFrame([d])
+
+#prueba
+p0 = solicitante(fico = 900, dti = 0, revol_util = 0, inq_last_6mths = 0, delinq_yrs = 0, ingreso_anual = 1)
+
+>>>>>>> 2aa5f19bbb89525a6e94576873558b06062f3ca0
