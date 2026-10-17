@@ -1,0 +1,32 @@
+#clase de usuario, valida datos y crea diccionario 
+
+from pathlib import Path
+import math
+import pandas as pd
+
+csv_path = Path('proyectofinalprogramacion2/data/loan_data.csv')
+
+
+
+class Datosinvalidos(Exception):
+    """"clase para datos fuera de rango"""
+class solicitante:
+    r_datos = {"fico": (300, 850), "dti": (0, 40), "revol_util": (0, 120), "inq_last_6mths": (0, 40), "delinq_2yrs": (0, 20), "ingreso_anual": (1, 5_000_000)}
+
+    def __init__(self, **datos):
+        self._datos = {}
+        for campo, (minimo, maximo) in self.r_datos.items():
+            valor = datos.get(campo)
+            if valor is None or not maximo <= valor <= maximo: #valida la entrada de datos
+                raise Datosinvalidos(                           
+                    f'El campo: {campo} debe estar entre {minimo} y {maximo}'
+                )
+            self._datos[campo] = valor
+
+    def a_dict(self):
+        return dict(self._datos)        #Devuelve como diccionario(getter solo devuelve un atributo)
+
+    def a_dataframe(self):
+        d = self.a_dict()
+        d['log_annual_inc'] = math.log(d.pop('Ingreso_anual')) #csv usa log
+        return pd.DataFrame([d]) 
