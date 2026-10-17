@@ -1,2 +1,5 @@
 pandas
 math
+scikit-learn
+streamlit
+joblib
