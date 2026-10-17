@@ -1,9 +1,9 @@
-#entrenamiento, prediccion y persistencia de datos
+#entrenamiento, prediccion y guardado
 
 import os
 import joblib
 import pandas as pd
-from sklearn.linear_model import LogisticRegression #calcula probabilidad de morosidad, asume ausencia de valores extremos
+from sklearn.linear_model import LogisticRegression #calcula probabilidad de morosidad, asume ausencia de valores extremos, mas datasets o un dataset mas largo es mas optimo para aplicar
 from sklearn.metrics import roc_auc_score #regresa un real 0.5-1, 0.5 azar 1 perfecto
 from sklearn.model_selection import train_test_split  #reparte filas entre entrenamiento y test
 from sklearn.pipeline import Pipeline #encadenamos pasos
