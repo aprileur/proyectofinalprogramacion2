@@ -5,3 +5,5 @@ scikit-learn #entrenamineto y machine learning
 #kivy (posible uso para interfaz grafica)
 joblib #persistencia de datos
 os #creacion de directorios
+csv
+datetime
