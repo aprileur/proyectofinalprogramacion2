@@ -21,8 +21,12 @@ class rcsv(repo):
             with open(self._ruta, 'w', newline='', encoding= 'UTF-8') as f: csv.DictWriter(f, fieldnames = self.campos).writeheader()
 
     def guardar(self, registro):
-        registro = {**registro, 'fecha': datetime.now().isoformat(timespec= 'seconds')}
-        with open(self._ruta, newline='', encoding= 'UTF-8') as f:
+        registro = {**registro, "fecha": datetime.now().isoformat(timespec="seconds")}
+        with open(self._ruta, "a", newline="", encoding="utf-8") as f:
+            csv.DictWriter(f, fieldnames=self.campos).writerow(registro)
+
+    def listar(self):
+        with open(self._ruta, newline="", encoding="utf-8") as f:
             filas = list(csv.DictReader(f))
-        return filas[::-1]
+        return filas[::-1] 
 
