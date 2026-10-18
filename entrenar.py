@@ -1,3 +1,5 @@
+#Entrena al modelo
+
 from modelo import  modelomorosidad
 
 test0 = modelomorosidad()
