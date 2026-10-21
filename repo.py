@@ -26,3 +26,7 @@ class rcsv(repo):
             filas = list(csv.DictReader(f))
         return filas[::-1]
 
+    def listar(self):
+        with open(self._ruta, newline="", encoding="utf-8") as f:
+            filas = list(csv.DictReader(f))
+        return filas[::-1] 
