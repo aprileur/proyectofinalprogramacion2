@@ -1,7 +1,7 @@
 pandas #manejo de datos
 math
 scikit-learn #entrenamineto y machine learning
-streamlit (posible uso para interfaz grafica)
+streamlit #interfaz grafica
 joblib #persistencia de datos
 os #creacion de directorios
 cs
