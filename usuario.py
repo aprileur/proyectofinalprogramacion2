@@ -20,7 +20,7 @@ class solicitante:
         self._datos = {}
         for campo, (minimo, maximo) in self.r_datos.items():
             valor = datos.get(campo)
-            if valor is None or not maximo <= valor <= maximo: #valida la entrada de datos
+            if valor is None or not minimo <= valor <= maximo: #valida la entrada de datos
                 raise Datosinvalidos(                           
                     f'El campo: {campo} debe estar entre {minimo} y {maximo}'
                 )
@@ -31,5 +31,5 @@ class solicitante:
 
     def a_dataframe(self):
         d = self.a_dict()
-        d['log_annual_inc'] = math.log(d.pop('Ingreso_anual')) #csv usa log
+        d['log_annual_inc'] = math.log(d.pop('ingreso_anual')) #csv usa log
         return pd.DataFrame([d]) 
